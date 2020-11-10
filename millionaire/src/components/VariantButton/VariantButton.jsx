@@ -14,6 +14,7 @@ export const VariantButton = ({
   numberOfAnswers,
   answerAttempts,
   setAnswerAttempts,
+  setEndGame,
 }) => {
   const [correct, setCorrect] = useState(false);
   const [selected, setSelected] = useState(false);
@@ -35,14 +36,24 @@ export const VariantButton = ({
           setCorrect(true);
           setSelected(false);
         }, 2500);
-      }
 
-      setTimeout(() => {
-        setCorrect(false);
-        setSelected(false);
-        setWrong(false);
-        selectVariant(event, value);
-      }, 5000);
+        setTimeout(() => {
+          setCorrect(false);
+          setSelected(false);
+          setWrong(false);
+          setAnswerAttempts(1);
+          selectVariant();
+        }, 5000);
+      } else {
+        setTimeout(() => {
+          setSelected(false);
+          setWrong(true);
+        }, 2500);
+
+        setTimeout(() => {
+          setEndGame(true);
+        }, 5000);
+      }
     }
   };
 
@@ -74,4 +85,5 @@ VariantButton.propTypes = {
   numberOfAnswers: PropTypes.number.isRequired,
   answerAttempts: PropTypes.number.isRequired,
   setAnswerAttempts: PropTypes.func.isRequired,
+  setEndGame: PropTypes.func.isRequired,
 };

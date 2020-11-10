@@ -8,19 +8,20 @@ import './Game.css';
 
 import { VariantButton } from '../VariantButton';
 
-export const Game = ({ moneys, questionAnswer }) => {
-  // const [cash, setCash] = useState('0');
+export const Game = ({ moneys, questionAnswer, setEndGame }) => {
   const [answerAttempts, setAnswerAttempts] = useState(1);
-  const [questionNumber, setQuestionNumber] = useState('1');
+  const [questionNumber, setQuestionNumber] = useState(1);
   const [questionBlock, setQuestionBlock] = useState(
     questionAnswer.find((question) => question.id === questionNumber),
   );
 
-  const selectVariant = (event, value) => {
-    if (value === questionBlock.trueAnswer) {
-      setQuestionNumber(`${+questionNumber + 1}`);
+  const selectVariant = () => {
+    if (questionNumber === 12) {
+      setEndGame(true);
+    } else {
+      setQuestionNumber(questionNumber + 1);
       setQuestionBlock(
-        questionAnswer.find((question) => question.id === `${+questionNumber + 1}`),
+        questionAnswer.find((question) => question.id === questionNumber + 1),
       );
     }
   };
@@ -41,6 +42,7 @@ export const Game = ({ moneys, questionAnswer }) => {
               numberOfAnswers={questionBlock.numberOfAnswers}
               answerAttempts={answerAttempts}
               setAnswerAttempts={setAnswerAttempts}
+              setEndGame={setEndGame}
             />
           ))}
         </article>
@@ -68,4 +70,5 @@ Game.propTypes = {
   questionAnswer: PropTypes.arrayOf(
     PropTypes.object,
   ).isRequired,
+  setEndGame: PropTypes.func.isRequired,
 };
