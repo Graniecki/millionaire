@@ -1,0 +1,48 @@
+.game {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
+  background-color: #F5F5F7;
+  padding: 70px 0;
+}
+
+.question,
+.variants {
+  padding-left: 80px;
+}
+
+.question h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 116%;
+  color: #1C1C21;
+}
+
+.variants {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.money-scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+}
+
+.money {
+  border: 1px solid #D0D0D8;
+  padding: 5px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #1C1C21;
+  text-align: center;
+}

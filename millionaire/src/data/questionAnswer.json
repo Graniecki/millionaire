@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "question": "1 + 1?",
+    "variants": ["1", "2", "3", "4"],
+    "trueAnswer": "2",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "2",
+    "question": "2 + 2?",
+    "variants": ["3", "2", "5", "4"],
+    "trueAnswer": "4",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "3",
+    "question": "3 + 3?",
+    "variants": ["6", "2", "3", "4"],
+    "trueAnswer": "6",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "4",
+    "question": "4 + 4?",
+    "variants": ["8", "2", "3", "4"],
+    "trueAnswer": "8",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "5",
+    "question": "5 + 5?",
+    "variants": ["1", "10", "3", "4"],
+    "trueAnswer": "10",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "6",
+    "question": "6 + 6?",
+    "variants": ["1", "2", "12", "4"],
+    "trueAnswer": "12",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "7",
+    "question": "7 + 7?",
+    "variants": ["1", "2", "3", "14"],
+    "trueAnswer": "14",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "8",
+    "question": "8 + 8?",
+    "variants": ["16", "2", "3", "4"],
+    "trueAnswer": "16",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "9",
+    "question": "9 + 9?",
+    "variants": ["1", "18", "3", "4"],
+    "trueAnswer": "18",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "10",
+    "question": "10 + 10?",
+    "variants": ["1", "20", "3", "4"],
+    "trueAnswer": "20",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "11",
+    "question": "11 + 11?",
+    "variants": ["1", "2", "22", "4"],
+    "trueAnswer": "22",
+    "numberOfAnswers": 2
+  },
+  {
+    "id": "12",
+    "question": "12 + 12?",
+    "variants": ["1", "2", "3", "24"],
+    "trueAnswer": "24",
+    "numberOfAnswers": 2
+  }
+]
