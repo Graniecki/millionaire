@@ -6,9 +6,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Game.css';
 
+import moneys from '../../data/moneys.json';
+import questionAnswer from '../../data/questionAnswer.json';
 import { VariantButton } from '../VariantButton';
 
-export const Game = ({ moneys, questionAnswer, setEndGame }) => {
+export const Game = ({ setEndGame, setWinMoney }) => {
   const [answerAttempts, setAnswerAttempts] = useState(1);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questionBlock, setQuestionBlock] = useState(
@@ -17,6 +19,7 @@ export const Game = ({ moneys, questionAnswer, setEndGame }) => {
 
   const selectVariant = () => {
     if (questionNumber === 12) {
+      setWinMoney('1,000,000');
       setEndGame(true);
     } else {
       setQuestionNumber(questionNumber + 1);
@@ -49,12 +52,12 @@ export const Game = ({ moneys, questionAnswer, setEndGame }) => {
       </main>
       <aside className="money-scale">
         <div className="scale">
-          {moneys.map((money) => (
+          {moneys.map((object) => (
             <div
-              key={money}
+              key={object.money}
               className="money"
             >
-              <span>{`$${money}`}</span>
+              <span>{`$${object.money}`}</span>
             </div>
           ))}
         </div>
@@ -64,11 +67,6 @@ export const Game = ({ moneys, questionAnswer, setEndGame }) => {
 };
 
 Game.propTypes = {
-  moneys: PropTypes.arrayOf(
-    PropTypes.string,
-  ).isRequired,
-  questionAnswer: PropTypes.arrayOf(
-    PropTypes.object,
-  ).isRequired,
   setEndGame: PropTypes.func.isRequired,
+  setWinMoney: PropTypes.func.isRequired,
 };

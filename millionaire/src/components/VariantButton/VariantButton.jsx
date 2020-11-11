@@ -43,7 +43,7 @@ export const VariantButton = ({
           setWrong(false);
           setAnswerAttempts(1);
           selectVariant();
-        }, 5000);
+        }, 4000);
       } else {
         setTimeout(() => {
           setSelected(false);
