@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
 import PropTypes from 'prop-types';
-import hand from '../images/hand.png';
+import hand from '../../images/hand.png';
 import './GameStart.css';
 
 export const GameStart = ({ setStart }) => {
