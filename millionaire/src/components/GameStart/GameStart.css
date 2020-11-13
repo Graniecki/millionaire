@@ -1,103 +1,49 @@
 .game-start {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(to bottom right, white 50%, #FFF3EB 50%);
 }
 
-/* .hand {
-  width: 50%;
-} */
+.hand {
+  width: 100%;
+  text-align: center;
+  margin-top: 95px;
+}
 
-/* .hand img {
-  width: 80%;
-  margin: 100px 0 0 120px;
-} */
+.hand img {
+  width: 85%;
+}
 
-/* .frame {
-  width: 50%;
-  padding: 160px 0 0 30px;
-} */
-
-/* .title {
-  width: 75%;
+.frame {
+  width: 100%;
+  margin-top: 35px;
+  text-align: center;
   font-family: 'Inter', sans-serif;
-  font-size: 56px;
-  line-height: 60px;
-  font-weight: 600;
-} */
+  font-style: normal;
+  color: #1C1C21;
+}
 
-/* .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 47%;
-  margin-top: 50px;
-  padding: 20px 0 20px 0;
+.title {
+  padding-left: 27px;
+  width: 91%;}
+
+.button {
+  margin-top: 100px;
+  width: 90%;
+  padding: 16px 0 16px 0;
   background-color: #FF8B37;
-  border-radius: 12px;
-  border: none;
   outline-width: 0;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+  border: none;
+  border-radius: 10px;
   color: #FFFFFF;
-  cursor: pointer;
-  transition: background-color 300ms;
-} */
+}
 
-
-/*---------------------------------------*/
-
-/* .button:hover {
+.button:hover {
   background-color: #FFAC70;
 }
 
 .button:active {
   background-color: #E87928;
-} */
-
-
-
-/*---------------------------------------------------------*/
-
-/* @media screen and (max-width: 414px) {
-  .game-start {
-    flex-direction: column;
-  }
-
-  .game-start .hand {
-    width: 100%;
-    text-align: center;
-  }
-
-  .game-start .hand img {
-    width: 80%;
-    margin: 0px;
-    padding: 120px 0 0 30px;
-  }
-
-  .game-start .frame {
-    width: 100%;
-    padding: 50px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .frame .title {
-    width: 100%;
-    text-align: center;
-    font-size: 35px;
-    line-height: 40px;
-  }
-
-  .game-start .button {
-    margin: 35% 0 0 0;
-    padding: 20px 0;
-    width: 80%;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: normal;
-  }
-} */
+}
