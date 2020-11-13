@@ -18,7 +18,7 @@ export const Game = ({ setEndGame, setFinalScore }) => {
   const { trueAnswers } = questionBlock;
   const numberOfTrueAnswers = trueAnswers.length;
 
-  const selectVariant = (event) => { // Переписати на switch
+  const selectVariant = (event) => {
     const variantButton = event.currentTarget;
     const variantsBlock = variantButton.parentElement;
 
@@ -49,7 +49,9 @@ export const Game = ({ setEndGame, setFinalScore }) => {
 
             questionNumber === 12
               ? (setEndGame(true), setFinalScore('1,000,000'))
-              : setQuestionBlock(config.find((question) => question.id === questionNumber + 1));
+              : setQuestionBlock(
+                config.find((question) => question.id === questionNumber + 1),
+              );
           }, 2500);
         } else {
           setTimeout(() => {
@@ -75,9 +77,7 @@ export const Game = ({ setEndGame, setFinalScore }) => {
               key={questionBlock.variantLetters[index]}
               type="button"
               data-value={variant}
-              className={classNames({
-                variant: true,
-              })}
+              className="variant"
               onClick={selectVariant}
             >
               <span>
@@ -92,7 +92,11 @@ export const Game = ({ setEndGame, setFinalScore }) => {
           {moneys.map((object) => (
             <div
               key={object.money}
-              className="money"
+              className={classNames({
+                money: true,
+                'current-question': questionNumber === object.id,
+                'earned-money': questionNumber > object.id,
+              })}
             >
               <span>{`$${object.money}`}</span>
             </div>

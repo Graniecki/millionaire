@@ -24,7 +24,11 @@ function App() {
         />
       )}
       {endGame && (
-        <GameOver finalScore={finalScore} />
+        <GameOver
+          finalScore={finalScore}
+          setStart={setStart}
+          setEndGame={setEndGame}
+        />
       )}
     </div>
   );
