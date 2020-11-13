@@ -7,41 +7,59 @@ import PropTypes from 'prop-types';
 import './Game.css';
 
 import moneys from '../../data/moneys.json';
-import questionAnswer from '../../data/questionAnswer.json';
+import config from '../../data/config.json';
 
-export const Game = ({ setEndGame, setWinMoney }) => {
+export const Game = ({ setEndGame, setFinalScore }) => {
   const [userAttempts, setUserAttempts] = useState(1);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questionBlock, setQuestionBlock] = useState(
-    questionAnswer.find((question) => question.id === questionNumber),
+    config.find((question) => question.id === questionNumber),
   );
   const { trueAnswers } = questionBlock;
   const numberOfTrueAnswers = trueAnswers.length;
 
-  const selectVariant = (event) => {
-    const { parentElement } = event.currentTarget;
+  const selectVariant = (event) => { // Переписати на switch
+    const variantButton = event.currentTarget;
+    const variantsBlock = variantButton.parentElement;
+
+    if (variantButton.classList.contains('selected')) {
+      return;
+    }
 
     if (userAttempts <= numberOfTrueAnswers) {
-      event.currentTarget.classList.add('selected');
+      variantButton.classList.add('selected');
       setUserAttempts(userAttempts + 1);
     }
 
     if (userAttempts === numberOfTrueAnswers) {
-      const selectedVariants = [...parentElement.querySelectorAll('.selected')];
+      const selectedVariants = [...variantsBlock.querySelectorAll('.selected')];
 
-      // setTimeout(() => {
-      //   selectedVariants.forEach((variant) => {
-      //     trueAnswers.some((answer) => answer === variant.dataset.value)
-      //       ? variant.classList.add('correct')
-      //       : variant.classList.add('wrong');
-      //   });
+      setTimeout(() => {
+        selectedVariants.forEach((variant) => {
+          trueAnswers.some((answer) => answer === variant.dataset.value)
+            ? variant.classList.add('correct')
+            : variant.classList.add('wrong');
+        });
 
-      //   setQuestionNumber(questionNumber + 1);
-      // }, 2500);
+        if (selectedVariants.every((variant) => variant.classList.contains('correct'))) {
+          setTimeout(() => {
+            selectedVariants.forEach((variant) => variant.classList.remove('selected', 'correct'));
+            setUserAttempts(1);
+            setQuestionNumber(questionNumber + 1);
 
-      // setTimeout(() => {
-      //   setQuestionNumber(questionNumber + 1);
-      // }, 2000);
+            questionNumber === 12
+              ? (setEndGame(true), setFinalScore('1,000,000'))
+              : setQuestionBlock(config.find((question) => question.id === questionNumber + 1));
+          }, 2500);
+        } else {
+          setTimeout(() => {
+            const finalScore = moneys.find((cash) => cash.id === (questionNumber - 1));
+
+            setEndGame(true);
+            setFinalScore(finalScore ? finalScore.money : '0');
+          }, 2500);
+        }
+      }, 2500);
     }
   };
 
@@ -87,5 +105,5 @@ export const Game = ({ setEndGame, setWinMoney }) => {
 
 Game.propTypes = {
   setEndGame: PropTypes.func.isRequired,
-  setWinMoney: PropTypes.func.isRequired,
+  setFinalScore: PropTypes.func.isRequired,
 };

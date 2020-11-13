@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import moneys from './data/moneys.json';
-import questionAnswer from './data/questionAnswer.json';
-
 import { GameStart } from './components/GameStart';
 import { Game } from './components/Game';
 import { GameOver } from './components/GameOver';
@@ -11,7 +8,7 @@ import { GameOver } from './components/GameOver';
 function App() {
   const [start, setStart] = useState(false);
   const [endGame, setEndGame] = useState(false);
-  const [winMoney, setWinMoney] = useState('0');
+  const [finalScore, setFinalScore] = useState('');
 
   return (
     <div className="App">
@@ -22,14 +19,12 @@ function App() {
       )}
       {start && !endGame && (
         <Game
-          moneys={moneys}
-          questionAnswer={questionAnswer}
           setEndGame={setEndGame}
-          setWinMoney={setWinMoney}
+          setFinalScore={setFinalScore}
         />
       )}
       {endGame && (
-        <GameOver winMoney={winMoney} />
+        <GameOver finalScore={finalScore} />
       )}
     </div>
   );

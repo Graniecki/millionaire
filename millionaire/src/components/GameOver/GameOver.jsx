@@ -5,16 +5,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './GameOver.css';
 
-export const GameOver = ({ winMoney }) => {
+export const GameOver = ({ finalScore }) => {
   return (
     <div className="game-over">
       <h1>
-        {winMoney}
+        {finalScore}
       </h1>
     </div>
   );
 };
 
 GameOver.propTypes = {
-  winMoney: PropTypes.string.isRequired,
+  finalScore: PropTypes.string.isRequired,
 };
