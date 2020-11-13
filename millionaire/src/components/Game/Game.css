@@ -32,13 +32,16 @@
 }
 
 .variant {
+  background: url(../../images/Inactive.png) no-repeat;
+  background-size: 100% auto;
+  height: 70px;
+  position: relative;
   width: 40%;
-  background-color: #FFFFFF;
-  border: 1px solid #D0D0D8;
+  background-color: #F5F5F7;
+  border: none;
   outline-width: 0;
-  padding: 10px 0;
-  text-align: center;
-  margin: 10px;
+  margin: 10px 0 10px 0;
+  text-align: left;
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   line-height: 23.2px;
@@ -47,23 +50,32 @@
   transition: border 300ms;
 }
 
+.variant-lettert {
+  position: absolute;
+  left: 11%;
+  font-style: normal;
+  font-weight: 600;
+  color: #FF8B37;
+}
+
+.variant-value {
+  margin-left: 20%;
+}
+
 .variant:hover {
-  border-color: #FF8B37;
+  background-image: url(../../images/Hover.png);
 }
 
 .correct {
-  border-color: #47D867 !important;
-  background-color: #E6FAEA;
+  background-image: url(../../images/Correct.png) !important;
 }
 
 .selected {
-  border-color: #FF8B37;
-  background-color: #FFF3EB;
+  background-image: url(../../images/Selected.png) !important;
 }
 
 .wrong {
-  border-color: #EC6259 !important;
-  background-color: #FDEEED;
+  background-image: url(../../images/Wrong.png) !important;
 }
 
 .money-scale {
@@ -74,16 +86,20 @@
 }
 
 .money {
-  border: 1px solid #D0D0D8;
-  padding: 5px 0;
+  background: url(../../images/earned.png) no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  height: 40px;
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   color: #1C1C21;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .current-question {
-  border-color: #FF8B37;
+  background-image: url(../../images/current-question.png);
   color: #FF8B37;
 }
 

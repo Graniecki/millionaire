@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "question": "1 + 1?",
-    "variants": ["2", "2", "3", "4"],
+    "question": "How old your elder brother was 10 years before you was born, mate?",
+    "variants": ["10 years", "11 years", "12 years", "14 years"],
     "variantLetters": ["A", "B", "C", "D"],
-    "trueAnswers": ["2", "2"]
+    "trueAnswers": ["10 years"]
   },
   {
     "id": 2,

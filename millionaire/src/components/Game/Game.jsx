@@ -37,13 +37,13 @@ export const Game = ({ setEndGame, setFinalScore }) => {
       setTimeout(() => {
         selectedVariants.forEach((variant) => {
           trueAnswers.some((answer) => answer === variant.dataset.value)
-            ? variant.classList.add('correct')
-            : variant.classList.add('wrong');
+            ? (variant.classList.remove('selected'), variant.classList.add('correct'))
+            : (variant.classList.remove('selected'), variant.classList.add('wrong'));
         });
 
         if (selectedVariants.every((variant) => variant.classList.contains('correct'))) {
           setTimeout(() => {
-            selectedVariants.forEach((variant) => variant.classList.remove('selected', 'correct'));
+            selectedVariants.forEach((variant) => variant.classList.remove('correct'));
             setUserAttempts(1);
             setQuestionNumber(questionNumber + 1);
 
@@ -80,7 +80,10 @@ export const Game = ({ setEndGame, setFinalScore }) => {
               className="variant"
               onClick={selectVariant}
             >
-              <span>
+              <span className="variant-lettert">
+                {questionBlock.variantLetters[index]}
+              </span>
+              <span className="variant-value">
                 {variant}
               </span>
             </button>
