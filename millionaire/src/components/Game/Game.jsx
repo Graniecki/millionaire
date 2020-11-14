@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
-/* eslint-disable no-unused-vars */
 /* eslint-disable import/prefer-default-export */
+
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
