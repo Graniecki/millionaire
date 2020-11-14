@@ -97,40 +97,57 @@
 
   .frame {
     margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .title {
     width: 100%;
-    font-size: 11vw;
+    font-size: 6vw;
+    padding: 0;
+    width: 54%;
   }
 
   .button {
-    padding: 28px 0;
-    font-size: 35px;
+    padding: 20px 0;
+    font-size: 30px;
+    margin-top: 80px;
+    width: 65%;
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1025px) {
   .hand {
-    margin-top: 150px;
+    margin-top: 6%;
+  }
+
+  .hand img {
+    width: 45%;
   }
 
   .frame {
-    margin-top: 90px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .title {
-    width: 100%;
-    font-size: 11vw;
+    width: 36%;
+    font-size: 3vw;
+    padding: 0;
   }
 
   .button {
-    font-size: 5vw;
-    padding: 30px 0;
+    font-size: 2vw;
+    padding: 10px 0;
+    margin-top: 30px;
+    width: 30%;
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1280px) {
+@media screen and (min-width: 1026px) and (max-width: 1280px) {
   .game-start {
     display: flex;
     flex-direction: row;

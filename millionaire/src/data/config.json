@@ -9,9 +9,9 @@
   {
     "id": 2,
     "question": "2 + 2?",
-    "variants": ["3", "2", "5", "4"],
+    "variants": ["4", "2", "5", "4"],
     "variantLetters": ["A", "B", "C", "D"],
-    "trueAnswers": ["4"]
+    "trueAnswers": ["4", "4"]
   },
   {
     "id": 3,
