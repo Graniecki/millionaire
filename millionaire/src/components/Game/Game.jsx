@@ -4,12 +4,15 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import menu from '../../images/Menu.png';
+import close from '../../images/Close.png';
 import './Game.css';
 
 import moneys from '../../data/moneys.json';
 import config from '../../data/config.json';
 
 export const Game = ({ setEndGame, setFinalScore }) => {
+  const [menuClose, setMenuClose] = useState(false);
   const [userAttempts, setUserAttempts] = useState(1);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questionBlock, setQuestionBlock] = useState(
@@ -67,7 +70,18 @@ export const Game = ({ setEndGame, setFinalScore }) => {
 
   return (
     <div className="game">
-      <main className="questions">
+      <button
+        type="button"
+        className="menu"
+        onClick={() => setMenuClose(true)}
+      >
+        <img src={menu} alt="menu" />
+      </button>
+      <main className={classNames({
+        questions: true,
+        unvisible: menuClose,
+      })}
+      >
         <article className="question">
           <h1>{questionBlock.question}</h1>
         </article>
@@ -90,7 +104,11 @@ export const Game = ({ setEndGame, setFinalScore }) => {
           ))}
         </article>
       </main>
-      <aside className="money-scale">
+      <aside className={classNames({
+        'money-scale': true,
+        unvisible: !menuClose,
+      })}
+      >
         <div className="scale">
           {moneys.map((object) => (
             <div
@@ -105,6 +123,14 @@ export const Game = ({ setEndGame, setFinalScore }) => {
             </div>
           ))}
         </div>
+        <button
+          type="button"
+          className="close-menu"
+          onClick={() => setMenuClose(false)}
+        >
+          <img src={close} alt="close-menu" />
+        </button>
+
       </aside>
     </div>
   );

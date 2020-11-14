@@ -1,65 +1,101 @@
 .game {
   display: flex;
+  flex-direction: column;
+  position: relative;
   width: 100%;
   height: 100vh;
-}
-
-.questions {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 75%;
   background-color: #F5F5F7;
-  padding: 70px 0;
 }
 
-.question,
-.variants {
-  padding-left: 80px;
+.menu,
+.close-menu {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  border: none;
+  outline-width: 0;
+  background-color: #F5F5F7;
+
+}
+
+.menu img,
+.close-menu img {
+  width: 10vw;
+}
+
+.unvisible {
+  display: none;
+}
+
+.question {
+  margin-top: 42%;
 }
 
 .question h1 {
-  font-family: 'Inter', sans-serif;
+  padding: 0 6%;
+  text-align: center;
+  font-size: 6vw;
+  line-height: 4vh;
+  letter-spacing: -1px;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 116%;
   color: #1C1C21;
 }
 
 .variants {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  position: absolute;
+  bottom: 6%;
 }
 
 .variant {
+  width: 100%;
+  height: 60px;
   background: url(../../images/Inactive.png) no-repeat;
   background-size: 100% auto;
-  height: 70px;
-  position: relative;
-  width: 40%;
-  background-color: #F5F5F7;
   border: none;
   outline-width: 0;
-  margin: 10px 0 10px 0;
   text-align: left;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  line-height: 23.2px;
-  font-weight: 400;
+  padding-left: 14%;
   color: #1C1C21;
-  transition: border 300ms;
 }
 
 .variant-lettert {
-  position: absolute;
-  left: 11%;
   font-style: normal;
   font-weight: 600;
   color: #FF8B37;
+  margin-right: 4%;
 }
 
-.variant-value {
-  margin-left: 20%;
+.money-scale {
+  width: 100%;
+}
+
+.scale {
+  margin-top: 19%;
+}
+
+.money {
+  width: 100%;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../images/earned.png) no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  color: #1C1C21;
+  margin-bottom: 1%;
+}
+
+.current-question {
+  background-image: url(../../images/current-question.png);
+  color: #FF8B37;
+}
+
+.earned-money {
+  color: #D0D0D8;
 }
 
 .variant:hover {
@@ -78,31 +114,163 @@
   background-image: url(../../images/Wrong.png) !important;
 }
 
-.money-scale {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 25%;
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .variant {
+    height: 70px;
+    font-size: 19px;
+  }
+
+  .money {
+    height: 43px;
+  }
 }
 
-.money {
-  background: url(../../images/earned.png) no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-  height: 40px;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  color: #1C1C21;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  .variant {
+    height: 80px;
+    font-size: 19px;
+  }
+
+  .money {
+    height: 45px;
+    font-size: 18px;
+  }
 }
 
-.current-question {
-  background-image: url(../../images/current-question.png);
-  color: #FF8B37;
+@media screen and (min-width: 415px) and (max-width: 768px) {
+  .variant {
+    background-size: 100% 100%;
+    height: 90px;
+    font-size: 25px;
+    margin-bottom: 1%;
+  }
+
+  .money {
+    background-size: 100% 100%;
+    height: 60px;
+    font-size: 25px;
+  }
 }
 
-.earned-money {
-  color: #D0D0D8;
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .variant {
+    background-size: 100% 100%;
+    height: 115px;
+    font-size: 40px;
+    margin-bottom: 2%;
+  }
+
+  .money {
+    background-size: 100% 100%;
+    height: 80px;
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .menu,
+  .close-menu {
+    display: none;
+  }
+
+  .game {
+    flex-direction: row;
+  }
+
+  .questions {
+    width: 80%;
+  }
+
+  .question {
+    margin: 0;
+  }
+
+  .question h1 {
+    font-size: 3vw;
+    line-height: 3.5vw;
+    width: 80%;
+    text-align: left;
+    margin: 10% 0 0 7%;
+    padding: 0;
+  }
+
+  .variants {
+    width: 60%;
+    bottom: 11%;
+    left: 7%;
+  }
+
+  .variant {
+    background-size: 100% 100%;
+    width: 50%;
+    margin-bottom: 4%;
+    padding-left: 6%;
+    font-size: 17px;
+  }
+
+  .money-scale {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+  }
+
+  .money {
+    background-size: 100% 100%;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .menu,
+  .close-menu {
+    display: none;
+  }
+
+  .game {
+    flex-direction: row;
+  }
+
+  .questions {
+    width: 80%;
+  }
+
+  .question {
+    margin: 0;
+  }
+
+  .question h1 {
+    font-size: 3vw;
+    line-height: 3.5vw;
+    width: 80%;
+    text-align: left;
+    margin: 10% 0 0 7%;
+    padding: 0;
+  }
+
+  .variants {
+    width: 60%;
+    bottom: 11%;
+    left: 7%;
+  }
+
+  .variant {
+    background-size: 100% 100%;
+    width: 50%;
+    margin-bottom: 4%;
+    padding-left: 6%;
+    font-size: 17px;
+  }
+
+  .money-scale {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+  }
+
+  .money {
+    background-size: 100% 100%;
+  }
 }
