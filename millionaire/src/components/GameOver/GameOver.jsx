@@ -1,11 +1,9 @@
-/* eslint-disable import/prefer-default-export */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import hand from '../../images/hand.png';
 import './GameOver.css';
 
-export const GameOver = ({ finalScore, setStart, setEndGame }) => {
+const GameOver = ({ finalScore, setStart, setEndGame }) => {
   const tryAgain = () => {
     setStart(true);
     setEndGame(false);
@@ -35,6 +33,8 @@ export const GameOver = ({ finalScore, setStart, setEndGame }) => {
 
   );
 };
+
+export default GameOver;
 
 GameOver.propTypes = {
   finalScore: PropTypes.string.isRequired,

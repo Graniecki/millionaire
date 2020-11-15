@@ -1,1 +1,3 @@
-export * from './GameStart';
+import GameStart from './GameStart';
+
+export default GameStart;

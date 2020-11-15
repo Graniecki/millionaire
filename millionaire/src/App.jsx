@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import { GameStart } from './components/GameStart';
-import { Game } from './components/Game';
-import { GameOver } from './components/GameOver';
+import GameStart from './components/GameStart';
+import Game from './components/Game';
+import GameOver from './components/GameOver';
 
 function App() {
   const [start, setStart] = useState(false);

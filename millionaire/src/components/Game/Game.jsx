@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-expressions */
-/* eslint-disable import/prefer-default-export */
-
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -11,7 +9,7 @@ import './Game.css';
 import moneys from '../../data/moneys.json';
 import config from '../../data/config.json';
 
-export const Game = ({ setEndGame, setFinalScore }) => {
+const Game = ({ setEndGame, setFinalScore }) => {
   const [menuClose, setMenuClose] = useState(false);
   const [userAttempts, setUserAttempts] = useState(1);
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -135,6 +133,8 @@ export const Game = ({ setEndGame, setFinalScore }) => {
     </div>
   );
 };
+
+export default Game;
 
 Game.propTypes = {
   setEndGame: PropTypes.func.isRequired,
